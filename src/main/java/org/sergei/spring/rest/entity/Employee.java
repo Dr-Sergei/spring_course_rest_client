@@ -56,4 +56,16 @@ public class Employee {
     public void setDepartment(final String department) {
         this.department = department;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Employee{");
+        sb.append("id=").append(id);
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", surname='").append(surname).append('\'');
+        sb.append(", salary=").append(salary);
+        sb.append(", department='").append(department).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }
