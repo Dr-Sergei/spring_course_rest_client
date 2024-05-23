@@ -17,7 +17,18 @@ public class App {
 //            System.out.println(e);
 //        }
 
-        Employee employee = communication.getEmployee(4);
-        System.out.println(employee);
+        //get Employee
+//        Employee employee = communication.getEmployee(4);
+//        System.out.println(employee);
+
+        //save and update
+//        Employee employee = new Employee("Wasja","Pupkin", 3300, "Sales");
+//        Employee employee = communication.getEmployee(13);
+//        employee.setDepartment("Storage");
+//        employee.setSalary(2020);
+//        communication.saveEmployee(employee);
+
+        //delete Employee
+        communication.deleteEmployee(13);
     }
 }
