@@ -18,7 +18,6 @@ public class Communication {
     private final String URL = "http://localhost:8003/spring/api/employees";
 
     public List<Employee> getAllEmployees() {
-
         ResponseEntity<List<Employee>> responseEntity = restTemplate.exchange(URL, HttpMethod.GET, null, new ParameterizedTypeReference<List<Employee>>() {
         });
 
@@ -34,7 +33,15 @@ public class Communication {
     }
 
     public void saveEmployee(Employee employee) {
-
+        int id = employee.getId();
+        if (id == 0) {
+            ResponseEntity<String> responseEntity = restTemplate.postForEntity(URL, employee, String.class);
+            System.out.println("New Employee was added to DataBase");
+            System.out.println(responseEntity.getBody());
+        } else {
+            restTemplate.put(URL, employee);
+            System.out.println("Employee wit id=" + id + " was updated!");
+        }
     }
 
     public void deleteEmployee(int id) {
